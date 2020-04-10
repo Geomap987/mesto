@@ -1,0 +1,20 @@
+.form__close-button {
+    width: 54px;
+    height: 54px;
+    border: none;
+    padding: 0;
+    background: url(../../../images/CloseIcon.svg);
+    margin-top: -50px;
+    margin-right: calc((-1) * (340px + (58px * 2)));
+    transition: opacity .5s ease;
+}
+
+.form__close-button:hover {
+    opacity: 0.8;
+}
+  
+@media screen and (max-width: 555px) {
+    .form__close-button {
+       margin-right: calc((-1) * (260px + 50px));
+    }
+}
