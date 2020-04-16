@@ -4,12 +4,7 @@
 @import url(./__submit-button/form__submit-button.css);
 @import url(./__close-button/form__close-button.css);
 
-.form {
-    width: 100%;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    position: fixed;
-}
+
 
 
 

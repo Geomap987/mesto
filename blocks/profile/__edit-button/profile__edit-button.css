@@ -2,7 +2,10 @@
     background: url(../../../images/EditButton.svg);
     width: 24px;
     height: 24px;
+    background-size: contain;
+    background-repeat: no-repeat;
     margin-left: 16px;
+    margin-right: 4px;
     border: none;
     transition: opacity 1s ease;
 }
@@ -10,4 +13,4 @@
 .profile__edit-button:hover {
     opacity: .6;
 }
-  
+
