@@ -11,12 +11,12 @@
   <title>Mesto. Russia</title>
 </head>
 <body class="page">
-  <section class="popup popup_closed">
+  <section class="popup">
     <form class="popup__container">
-      <button class="popup__close-button"></button>
+      <button type="button" class="popup__close-button"></button>
       <h3 class="popup__title">Редактировать профиль</h3>
-      <input type="text" class="popup__input popup__input_title">
-      <input type="text" class="popup__input popup__input_subtitle">
+      <input type="text" name="name"  placeholder="Имя"  class="popup__input popup__input_title">
+      <input type="text" name="job" placeholder="Занятие" class="popup__input popup__input_subtitle">
       <button type="submit" class="popup__submit-button">Сохранить</button>
     </form>
   </section>
@@ -30,57 +30,57 @@
           <div class="profile__text-container">
             <div class="profile__button-wrapper">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
-              <button class="profile__edit-button" ></button>
+              <button type="button" class="profile__edit-button" ></button>
             </div>
             <p class="profile__subtitle">Исследователь квартиры</p>
           </div>
       </div>
-      <button class="profile__add-button"></button>
+      <button type="button" class="profile__add-button"></button>
     </section>
     <section class="photo-grid">
       <div class="photo-grid__container">
-        <div class="photo-grid__card">
+        <article class="photo-grid__card">
           <img class="photo-grid__photo" src="./images/livingroom.jpg" alt="Фотография гостиной">
           <div class="photo-grid__text">
             <h3 class="photo-grid__title">Гостиная</h3>
-            <img class="photo-grid__like-icon" src="./images/like.svg" alt="Иконка лайк"> 
+            <button type="button" class="photo-grid__like-icon"> 
           </div>
-        </div>
-        <div class="photo-grid__card">
+        </article>
+        <article class="photo-grid__card">
           <img class="photo-grid__photo" src="./images/kitchen.jpg" alt="Фотография кухни">
           <div class="photo-grid__text">
             <h3 class="photo-grid__title">Кухня</h3>
-            <img class="photo-grid__like-icon" src="./images/like.svg" alt="Иконка лайк"> 
+            <button type="button" class="photo-grid__like-icon"> 
           </div>
-        </div>
-        <div class="photo-grid__card">
+        </article>
+        <article class="photo-grid__card">
           <img class="photo-grid__photo" src="./images/balcony.jpg" alt="Фотография балкона">
           <div class="photo-grid__text">
             <h3 class="photo-grid__title">Балкон</h3>
-            <img class="photo-grid__like-icon" src="./images/like.svg" alt="Иконка лайк"> 
+            <button type="button" class="photo-grid__like-icon"> 
           </div>
-        </div>
-        <div class="photo-grid__card">
+        </article>
+        <article class="photo-grid__card">
           <img class="photo-grid__photo" src="./images/bedroom.jpg" alt="Фотография спальни">
           <div class="photo-grid__text">
             <h3 class="photo-grid__title">Спальня</h3>
-            <img class="photo-grid__like-icon" src="./images/like.svg" alt="Иконка лайк"> 
+            <button type="button" class="photo-grid__like-icon"> 
           </div>
-        </div>
-        <div class="photo-grid__card">
+        </article>
+        <article class="photo-grid__card">
           <img class="photo-grid__photo" src="./images/babyroom.jpg" alt="Фотография детской">
           <div class="photo-grid__text">
             <h3 class="photo-grid__title">Детская</h3>
-            <img class="photo-grid__like-icon" src="./images/like.svg" alt="Иконка лайк"> 
+            <button type="button" class="photo-grid__like-icon"> 
           </div>
-        </div>
-        <div class="photo-grid__card">
+        </article>
+        <article class="photo-grid__card">
           <img class="photo-grid__photo" src="./images/bathroom.jpg" alt="Фотография ванной">
           <div class="photo-grid__text">
             <h3 class="photo-grid__title">Ванна</h3>
-            <img class="photo-grid__like-icon" src="./images/like.svg" alt="Иконка лайк"> 
+            <button type="button" class="photo-grid__like-icon"> 
           </div>
-        </div>
+        </article>
       </div>
     </section>
   </main>

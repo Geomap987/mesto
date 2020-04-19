@@ -6,14 +6,16 @@
     background-color: white;
     border-radius: 10px;
     position: absolute;
-    left: calc(50% - 215px);
-    top: calc(50% - 115px);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     align-items: center;
   }
   
   @media screen and (max-width: 555px) {
     .popup__container {
       width: 260px;
-      left: calc(50% - 130px);
     }
   }
+
+  

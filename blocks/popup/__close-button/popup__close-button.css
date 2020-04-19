@@ -4,8 +4,9 @@
     border: none;
     padding: 0;
     background: url(../../../images/CloseIcon.svg);
-    margin-top: -50px;
-    margin-right: calc((-1) * (340px + (58px * 2)));
+    position: absolute;
+    top: -50px;
+    right: -50px;
     transition: opacity .5s ease;
 }
 
@@ -13,8 +14,3 @@
     opacity: 0.8;
 }
   
-@media screen and (max-width: 555px) {
-    .popup__close-button {
-       margin-right: calc((-1) * (260px + 50px));
-    }
-}
