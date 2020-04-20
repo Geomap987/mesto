@@ -16,13 +16,19 @@ const inputName = document.querySelector('.popup__input_title');
 
 const inputJob = document.querySelector('.popup__input_subtitle');
 
-editButton.addEventListener('click', function() {
+function popupOpen () {
     popup.classList.add('popup_opened');
     inputName.value = title.textContent;
-    inputJob.value = subtitle.textContent});
+    inputJob.value = subtitle.textContent
+}
 
-closeButton.addEventListener('click', function () {
-    popup.classList.remove('popup_opened')});
+editButton.addEventListener('click', popupOpen);
+
+function popupClose () {
+    popup.classList.remove('popup_opened')
+}
+
+closeButton.addEventListener('click', popupClose);
 
 function formSubmitHandler (evt) {
     evt.preventDefault();
