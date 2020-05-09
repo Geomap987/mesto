@@ -25,8 +25,6 @@ const initialCards = [
     }
   ];
 
-const popup = document.querySelector('.popup');
-
 const popupProfile = document.getElementById('popupprofile');
 
 const popupAddPhoto = document.getElementById('popupaddphoto');
@@ -36,8 +34,6 @@ const editButton = document.querySelector('.profile__edit-button');
 const closeButtonProfile = document.getElementById('profilebutton');
 
 const closeButtonPhoto = document.getElementById('photobutton');
-
-const submitButton = document.querySelector('.popup__submit-button');
 
 const addButton = document.querySelector('.profile__add-button');
 
@@ -68,20 +64,20 @@ const bigPhotoPopupSubtitle = document.querySelector('.bigphoto-popup__subtitle'
 //функции для кнопок карточки
 
 function likeIconHandler() {
-  let likeIcon = document.querySelector('.photo-grid__like-icon');
+  const likeIcon = document.querySelector('.photo-grid__like-icon');
   likeIcon.addEventListener('click', evt => evt.target.classList.toggle('photo-grid__like-icon_active'))
 }
 
 function deleteIconHandler() {
-  let deleteIcon = document.querySelector('.photo-grid__delete-icon');
+  const deleteIcon = document.querySelector('.photo-grid__delete-icon');
   const closestCard = deleteIcon.closest('.photo-grid__card');
   deleteIcon.addEventListener('click', function() {
     closestCard.remove()});
 }
 
 function bigPhotoHandler() {
-  let cardPhoto = document.querySelector('.photo-grid__photo');
-  let cardTitle = document.querySelector('.photo-grid__title');
+  const cardPhoto = document.querySelector('.photo-grid__photo');
+  const cardTitle = document.querySelector('.photo-grid__title');
   cardPhoto.addEventListener('click', evt => {
     bigPhotoPopup.classList.toggle('bigphoto-popup_opened');
     bigPhotoPopupImage.src = cardPhoto.src;
@@ -93,11 +89,11 @@ function bigPhotoHandler() {
 //добавление карточек
 function addCard(item) {
   const cardTemplate = document.querySelector('.photo-grid__template').content;
-  const cardConteiner = document.querySelector('.photo-grid__container');
-  let card = cardTemplate.cloneNode(true);
+  const cardContainer = document.querySelector('.photo-grid__container');
+  const card = cardTemplate.cloneNode(true);
   card.querySelector('.photo-grid__photo').src = item.imageLink;
   card.querySelector('.photo-grid__title').textContent = item.title;
-  cardConteiner.prepend(card);
+  cardContainer.prepend(card);
   deleteIconHandler();
   likeIconHandler();
   bigPhotoHandler();
