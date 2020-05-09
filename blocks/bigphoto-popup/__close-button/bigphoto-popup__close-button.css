@@ -1,4 +1,4 @@
-.popup__close-button {
+.bigphoto-popup__close-button {
     width: 54px;
     height: 54px;
     border: none;
@@ -10,8 +10,8 @@
     transition: opacity .5s ease;
 }
 
-.popup__close-button:hover {
-    opacity: 0.8;
+.bigphoto-popup__close-button:hover {
+    opacity: .6;
     cursor: pointer;
 }
   

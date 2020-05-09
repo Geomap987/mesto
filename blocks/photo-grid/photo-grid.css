@@ -4,12 +4,15 @@
 @import url(./__text/photo-grid__text.css);
 @import url(./__title/photo-grid__title.css);
 @import url(./__like-icon/photo-grid__like-icon.css);
+@import url(./__delete-icon/photo-grid__delete-icon.css);
 
 .photo-grid {
     margin: auto;
     padding: 0 20px;
     display: flex;
 }
+
+
 
 
 

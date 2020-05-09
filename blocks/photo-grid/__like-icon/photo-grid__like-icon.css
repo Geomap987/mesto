@@ -5,9 +5,17 @@
     background-position: center;
     width: 21px;
     border: none;
-    transition: 1s ease;
+    transition: opacity 1s ease;
 }
 
 .photo-grid__like-icon:hover {
-    transform: scale(1.3);
+    opacity: .6;
+    cursor: pointer;
+}
+
+.photo-grid__like-icon_active {
+    background: url(../../../images/likeactive.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
