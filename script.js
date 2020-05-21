@@ -61,6 +61,8 @@ const bigPhotoPopupCloseButton = document.querySelector('.bigphoto-popup__close-
 
 const bigPhotoPopupSubtitle = document.querySelector('.bigphoto-popup__subtitle');
 
+const bigPhotoPopupContainer = document.querySelector('.bigphoto-popup__container');
+
 //функции для кнопок карточки
 
 function likeIconHandler() {
@@ -113,7 +115,7 @@ addInitialCards();
 function popupProfileOpen () {
     popupProfile.classList.add('popup_opened');
     inputName.value = title.textContent;
-    inputJob.value = subtitle.textContent
+    inputJob.value = subtitle.textContent;
 }
 
 editButton.addEventListener('click', popupProfileOpen);
@@ -124,14 +126,18 @@ function popupProfileClose () {
 
 closeButtonProfile.addEventListener('click', popupProfileClose);
 
+popupProfile.addEventListener('click', function(e) {
+  if (!formElement.contains(e.target)) {
+    popupProfileClose();
+  }
+})
+
 // обработчик профиля
 
 function profileSubmitHandler (evt) {
   evt.preventDefault();
-  if (inputName.value.length !== 0) {
-  title.textContent = inputName.value;};
-  if (inputJob.value.length !== 0) {
-  subtitle.textContent = inputJob.value;};
+  title.textContent = inputName.value; 
+  subtitle.textContent = inputJob.value;
   popupProfileClose ();
 }
 
@@ -140,6 +146,7 @@ formElement.addEventListener('submit', profileSubmitHandler);
 //попап добавления фото
 function popupAddPhotoOpen () {
   popupAddPhoto.classList.add('popup_opened');
+  
 }
 
 addButton.addEventListener('click', popupAddPhotoOpen);
@@ -149,6 +156,12 @@ function popupPhotoClose () {
 }
 
 closeButtonPhoto.addEventListener('click', popupPhotoClose);
+
+popupAddPhoto.addEventListener('click', function(e) {
+  if (!formAddPhoto.contains(e.target)) {
+    popupPhotoClose ();
+  }
+})
 
 //обработчик добавления фото
 
@@ -161,7 +174,7 @@ function addPhotoSubmitHandler (evt) {
 
 formAddPhoto.addEventListener('submit', addPhotoSubmitHandler);
 
-//попап большое фото убрать
+//попап большое фото закрыть
 
 function popupBigPhotoClose () {
   bigPhotoPopup.classList.remove('bigphoto-popup_opened')
@@ -169,5 +182,21 @@ function popupBigPhotoClose () {
 
 bigPhotoPopupCloseButton.addEventListener('click', popupBigPhotoClose);
 
+bigPhotoPopup.addEventListener ('click', function(e) {
+if (!bigPhotoPopupContainer.contains(e.target) ) {
+  popupBigPhotoClose();
+}
+});
+
+//закрытие всех попапов при нажатии на esc
+
+window.addEventListener ('keydown', function(e) {
+  if (e.key === 'Escape') {
+    popupBigPhotoClose();
+    popupProfileClose();
+    popupPhotoClose ();
+  }
+  });
+  
 
 
