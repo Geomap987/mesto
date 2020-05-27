@@ -56,7 +56,7 @@ const enableValidation = ({formSelector, inputSelector, submitButtonSelector, in
   });
 }
 
-const Forms = {
+const validationConfig = {
   formSelector: '.popup__container',
   inputSelector: '.popup__input',
   submitButtonSelector: '.popup__submit-button',
@@ -64,5 +64,5 @@ const Forms = {
   inputErrorClass: 'popup__input_invalid',
 };
 
-enableValidation(Forms);
+enableValidation(validationConfig);
 

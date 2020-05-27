@@ -10,6 +10,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     align-items: center;
+    transition: ease 0.9s;
   }
   
   @media screen and (max-width: 555px) {
