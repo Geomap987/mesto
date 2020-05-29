@@ -1,4 +1,4 @@
-.bigphoto-popup__container {
+.popup__bigphoto-container {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -8,5 +8,3 @@
     transition: ease 0.9s;
 }
   
-  
-

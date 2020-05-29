@@ -53,15 +53,15 @@ const inputPlace = document.getElementById('photoplace');
 
 const inputLink = document.getElementById('photolink');
 
-const bigPhotoPopup = document.querySelector('.bigphoto-popup');
+const bigPhotoPopup = document.getElementById('bigphotopopup');
 
-const bigPhotoPopupImage = document.querySelector('.bigphoto-popup__image');
+const bigPhotoPopupImage = document.querySelector('.popup__bigphoto-image');
 
-const bigPhotoPopupCloseButton = document.querySelector('.bigphoto-popup__close-button');
+const bigPhotoPopupCloseButton = document.getElementById('bigphotobutton');
 
-const bigPhotoPopupSubtitle = document.querySelector('.bigphoto-popup__subtitle');
+const bigPhotoPopupSubtitle = document.querySelector('.popup__bigphoto-subtitle');
 
-const bigPhotoPopupContainer = document.querySelector('.bigphoto-popup__container');
+const bigPhotoPopupContainer = document.querySelector('.popup__bigphoto-container ');
 
 const cardTemplate = document.querySelector('.photo-grid__template').content;
 
@@ -80,7 +80,7 @@ function likeIconHandler(element) {
 function bigPhotoHandler(element) {
   bigPhotoPopupImage.src = element.src;
   bigPhotoPopupSubtitle.textContent = element.alt;
-  openPopup(bigPhotoPopup, popupBigPhotoClassOpened);
+  openPopup(bigPhotoPopup);
 }
 
 function deleteIconHandler(element) {

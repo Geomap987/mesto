@@ -6,8 +6,13 @@
 @import url(./__close-button/popup__close-button.css);
 @import url(./__input-error/popup__input-error.css);
 @import url(./__input-error_active/popup__input-error_active.css);
+@import url(./__bigphoto-container/popup__bigphoto-container.css);
+@import url(./__bigphoto-image/popup__bigphoto-image.css);
+@import url(./__bigphoto-subtitle/popup__bigphoto-subtitle.css);
 
 .popup {
+    top: 0;
+    left: 0;
     display: flex;
     width: 100%;
     height: 100vh;
