@@ -47,7 +47,7 @@
     </article>
   </template>
   <section id="popupprofile" class="popup">
-    <form id="profileform" name="profileform" class="popup__container" novalidate>
+    <form id="profileform" name="profileform" class="popup__container popup__container_edit" novalidate>
       <button type="button" id="profilebutton" class="popup__close-button"></button>
       <h3 class="popup__title">Редактировать профиль</h3>
       <input type="text" id="profilename" name="name"  placeholder="Имя"  class="popup__input popup__input_title" pattern="[a-zA-ZА-ЯЁа-яё\s\-]+" minlength="2" maxlength="40" required>
@@ -58,7 +58,7 @@
     </form>
   </section>
   <section id="popupaddphoto" class="popup">
-    <form id="addphotoform" class="popup__container" novalidate>
+    <form id="addphotoform" class="popup__container popup__container_add" novalidate>
       <button type="button" id="photobutton" class="popup__close-button"></button>
       <h3 class="popup__title">Новое место</h3>
       <input type="text" id="photoplace" name="place"  placeholder="Название"  class="popup__input popup__input_title" pattern="[a-zA-ZА-ЯЁа-яё\s\d\-]+" minlength="2" maxlength="40"  required>
@@ -75,6 +75,7 @@
       <p class="popup__bigphoto-subtitle"></p>
     </div>
   </section>
-  <script src="script.js"></script>
-  <script src="validate.js"></script>
+  <script type="module"  src="index.js"></script>
+  <script type="module" src="Card.js"></script>
+  <script type="module" src="FormValidator.js"></script>
 </body>
