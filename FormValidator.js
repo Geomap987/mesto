@@ -1,11 +1,3 @@
-const validationConfig = {
-    formSelector: '.popup__container',
-    inputSelector: '.popup__input',
-    submitButtonSelector: '.popup__submit-button',
-    inactiveButtonClass: 'popup__submit-button_disabled',
-    inputErrorClass: 'popup__input_invalid',
-  };
-  
   export default class FormValidator {
     constructor(validationConfig, targetForm) {
     this._formSelector = targetForm;
@@ -19,19 +11,19 @@ const validationConfig = {
       const inputError = formaElement.querySelector(`#${inputElement.id}-error`);
       inputElement.classList.add(this._inputErrorClass);
       inputError.textContent = errorMessage;
-    };
+    }
   
     _hideError = (formaElement, inputElement) => {
       const inputError = formaElement.querySelector(`#${inputElement.id}-error`);
       inputElement.classList.remove(this._inputErrorClass);
       inputError.textContent = '';
-    };
+    }
   
     _hasInvalidInput = (inputList) => {
       return inputList.some((inputElement) => {
         return !inputElement.validity.valid;
-      })
-    };
+      });
+    }
   
     _checkInputValidity = (formaElement, inputElement) => {
       if (!inputElement.validity.valid) {
@@ -39,7 +31,7 @@ const validationConfig = {
       } else {
         this._hideError(formaElement, inputElement);
       }
-    };
+    }
       
     _toggleButtonState (inputList, submitButton) {
       if (this._hasInvalidInput(inputList)) {
@@ -61,17 +53,18 @@ const validationConfig = {
         this._toggleButtonState(inputList, submitButton);
         });
       });
-    };
+    }
+
       
     enableValidation () {
-        const formList = Array.from(document.querySelectorAll(this._formSelector));
-        formList.forEach((formaElement) => {
-          formaElement.addEventListener('submit', function(evt) {
-          evt.preventDefault();
-          });
-          this._setEventListeners(formaElement);
+      const formList = Array.from(document.querySelectorAll(this._formSelector));
+      formList.forEach((formaElement) => {
+        formaElement.addEventListener('submit', function(evt) {
+        evt.preventDefault();
         });
-      }
+        this._setEventListeners(formaElement);
+      });
+    }
     
   }
   
