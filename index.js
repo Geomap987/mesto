@@ -120,24 +120,16 @@ closeButtonProfile.addEventListener('click', function() {
   closePopup(popupProfile)
 });
 
-popupAddPhoto.addEventListener('click', (e) => {
+const popupOverlayClose = (e) => {
   if (e.target.classList.contains('popup_opened')) {
     closePopup(e.target);
-  }
-});
+}}
 
-popupProfile.addEventListener('click', (e) => {
-  if (e.target.classList.contains('popup_opened')) {
-    closePopup(e.target);
-  }
-});
+const allPopups = document.querySelectorAll('.popup');
 
-bigPhotoPopup.addEventListener('click', (e) => {
-  if (e.target.classList.contains('popup_opened')) {
-    closePopup(e.target);
-  }
+allPopups.forEach(function(item) {
+  item.addEventListener('click', popupOverlayClose)
 });
-
 
 // обработчик профиля
 
