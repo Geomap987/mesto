@@ -1,5 +1,6 @@
 import Card from './Card.js';
 import FormValidator from './FormValidator.js';
+import Section from './Section.js';
 
 const initialCards = [
     {
@@ -76,6 +77,27 @@ const validationConfig = {
 
 // добавление карточек
 
+const initialCardList = new Section({
+  items: initialCards,
+  renderer: (item) => {
+    const card = new Card(item, cardTemplate);
+    const cardElement = card.generateCard();
+    initialCardList.addItem(cardElement); 
+  }
+}, cardContainer);
+
+initialCardList.renderItems();
+
+const newCardList = new Section({
+  items: [{ title: inputPlace.value, imageLink: inputLink.value }],
+  renderer: (item) => {
+    const card = new Card(item, cardTemplate);
+    const cardElement = card.generateCard();
+    newCardList.addItem(cardElement); 
+  }
+}, cardContainer);
+
+
 function addCard(item) {
   const card = new Card(item, cardTemplate);
   const cardElement = card.generateCard();
@@ -86,7 +108,7 @@ function addInitialCards() {
   initialCards.forEach(item => addCard(item));
 }
   
-addInitialCards();
+//addInitialCards();
 
 // открытие и закрытие попапов
 
