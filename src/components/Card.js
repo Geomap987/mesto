@@ -1,22 +1,5 @@
-const bigPhotoPopupImage = document.querySelector('.popup__bigphoto-image');
-const bigPhotoPopupSubtitle = document.querySelector('.popup__bigphoto-subtitle');
-const popupClassOpened = 'popup_opened';
-const bigPhotoPopup = document.getElementById('bigphotopopup');
+import PopupWithImage from './PopupWithImage.js';
 
-function openPopup(popup) {
-  document.addEventListener('keydown', escapeClosePopup);
-  popup.classList.add(popupClassOpened);}
-
-function escapeClosePopup(e) {
-  if (e.key === 'Escape') {
-    closePopup(document.querySelector('.popup_opened'));
-  };
-}
-
-function closePopup(popup) {
-  document.removeEventListener('keydown', escapeClosePopup);
-  popup.classList.remove(popupClassOpened);
-}
 export default class Card {
   constructor(data, cardSelector) {
     this._imageLink = data.imageLink;
@@ -32,11 +15,13 @@ export default class Card {
   _likeIconHandler(evt) {
     evt.target.classList.toggle('photo-grid__like-icon_active');
   }
-  
-  _bigPhotoHandler(evt) {
-    bigPhotoPopupImage.src = evt.target.src;
-    bigPhotoPopupSubtitle.textContent = evt.target.alt;
-    openPopup(bigPhotoPopup);
+ 
+  _handleCardClick(evt) {
+    const targetImage = evt.target.src;
+    const targetSubtitle = evt.target.alt;
+    const targetPhotoPopup = new PopupWithImage('.popup-bigphotopopup', targetImage, targetSubtitle)
+    targetPhotoPopup.openPopup()
+    targetPhotoPopup.setEventListener()
   }
   
   _deleteIconHandler(evt) {
@@ -50,7 +35,7 @@ export default class Card {
     const deleteIcon = this._element.querySelector('.photo-grid__delete-icon');
     likeIcon.addEventListener('click', this._likeIconHandler);
     deleteIcon.addEventListener('click', this._deleteIconHandler);
-    cardPhoto.addEventListener('click', this._bigPhotoHandler);
+    cardPhoto.addEventListener('click', this._handleCardClick);
   }
 
   generateCard() {

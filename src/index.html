@@ -7,7 +7,7 @@
   <meta name="description" content="Фотоальбом путешествий по России">
   <meta name="keywords" content="Россия, путешествия, фотоальбом">
   <meta name="author" content="Мария Васильева">
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="./pages/index.css">
   <title>Mesto. Russia</title>
 </head>
 <body class="page">
@@ -46,7 +46,7 @@
       </div>
     </article>
   </template>
-  <section id="popupprofile" class="popup">
+  <section id="popupprofile" class="popup popup-profile">
     <form id="profileform" name="profileform" class="popup__container popup__container_edit" novalidate>
       <button type="button" id="profilebutton" class="popup__close-button"></button>
       <h3 class="popup__title">Редактировать профиль</h3>
@@ -57,26 +57,31 @@
       <button type="submit" class="popup__submit-button">Сохранить</button> 
     </form>
   </section>
-  <section id="popupaddphoto" class="popup">
+  <section id="popupaddphoto" class="popup popup-addphoto">
     <form id="addphotoform" class="popup__container popup__container_add" novalidate>
       <button type="button" id="photobutton" class="popup__close-button"></button>
       <h3 class="popup__title">Новое место</h3>
-      <input type="text" id="photoplace" name="place"  placeholder="Название"  class="popup__input popup__input_title" pattern="[a-zA-ZА-ЯЁа-яё\s\d\-]+" minlength="2" maxlength="40"  required>
+      <input type="text" id="photoplace" name="title"  placeholder="Название"  class="popup__input popup__input_title" pattern="[a-zA-ZА-ЯЁа-яё\s\d\-]+" minlength="2" maxlength="40"  required>
       <span class='popup__input-error' id="photoplace-error"></span>
-      <input type="url" id="photolink" name="link" placeholder="Ссылка на картинку" class="popup__input popup__input_subtitle" required>
+      <input type="url" id="photolink" name="imageLink" placeholder="Ссылка на картинку" class="popup__input popup__input_subtitle" required>
       <span class='popup__input-error' id="photolink-error"></span>
       <button type="submit" class="popup__submit-button">Создать</button>
     </form>
   </section>
-  <section id="bigphotopopup" class="popup">
+  <section id="bigphotopopup" class="popup popup-bigphotopopup">
     <div class="popup__bigphoto-container ">
       <button type="button" id="bigphotobutton" class="popup__close-button"></button>
       <img class="popup__bigphoto-image">
       <p class="popup__bigphoto-subtitle"></p>
     </div>
   </section>
-  <script type="module"  src="index.js"></script>
-  <script type="module" src="Card.js"></script>
-  <script type="module" src="Section.js"></script>
-  <script type="module" src="FormValidator.js"></script>
+  <script type="module"  src="./pages/index.js"></script>
+  <script type="module" src="./components/Card.js"></script>
+  <script type="module" src="./components/Section.js"></script>
+  <script type="module" src="./components/FormValidator.js"></script>
+  <script type="module" src="./components/Popup.js"></script>
+  <script type="module" src="./components/PopupWithForm.js"></script>
+  <script type="module" src="./components/PopupWithImage.js"></script>
+  <script type="module" src="./components/UserInfo.js"></script>
+  
 </body>

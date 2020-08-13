@@ -9,17 +9,8 @@ export default class Section {
   addItem(element) {
     this._container.append(element);
   }
-
-
-  addOneCard(item) {
-    this._renderer(item);
-  }
   
-  clear() {
-  this._container.innerHTML = '';
-}
-
-renderItems() {
+  renderItems() {
     this._renderedItems.forEach(item => {
       this._renderer(item);
     });
