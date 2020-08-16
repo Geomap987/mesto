@@ -10,7 +10,7 @@ export default class Popup {
     }
   }
 
-  _popupOverlayClose = (e) => {
+  _popupOverlayClose(e) {
   if (e.target.classList.contains('popup_opened')) {
   document.querySelector('.popup_opened').classList.remove('popup_opened');
   }}

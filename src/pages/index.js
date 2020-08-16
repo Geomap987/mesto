@@ -3,19 +3,12 @@ import FormValidator from '../components/FormValidator.js';
 import Section from '../components/Section.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import UserInfo from '../components/UserInfo.js';
-//import livingroom from './images/livingroom.jpg';
-//import kitchen from './images/kitchen.jpg';
-//import balcony from './images/balcony.jpg';
-//import bedroom from './images/bedroom.jpg';
-//import babyroom from './images/babyroom.jpg';
-//import bathroom from './images/bathroom.jpg';
-//import './index.css';
+
+import './index.css';
 import {
   initialCards,
   editButton,
   addButton,
-  profileTitle,
-  profileSubtitle,
   inputName,
   inputJob,
   inputPlace,

@@ -7,25 +7,25 @@
     this._inputErrorClass = validationConfig.inputErrorClass;
     }
   
-    _showError = (formaElement, inputElement, errorMessage) => {
+    _showError(formaElement, inputElement, errorMessage) {
       const inputError = formaElement.querySelector(`#${inputElement.id}-error`);
       inputElement.classList.add(this._inputErrorClass);
       inputError.textContent = errorMessage;
     }
   
-    _hideError = (formaElement, inputElement) => {
+    _hideError(formaElement, inputElement) {
       const inputError = formaElement.querySelector(`#${inputElement.id}-error`);
       inputElement.classList.remove(this._inputErrorClass);
       inputError.textContent = '';
     }
   
-    _hasInvalidInput = (inputList) => {
+    _hasInvalidInput(inputList) {
       return inputList.some((inputElement) => {
         return !inputElement.validity.valid;
       });
     }
   
-    _checkInputValidity = (formaElement, inputElement) => {
+    _checkInputValidity(formaElement, inputElement) {
       if (!inputElement.validity.valid) {
         this._showError(formaElement, inputElement, inputElement.validationMessage);
       } else {

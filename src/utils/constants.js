@@ -1,27 +1,33 @@
+import livingroom from '../images/livingroom.jpg';
+import kitchen from '../images/kitchen.jpg';
+import balcony from '../images/balcony.jpg';
+import bedroom from '../images/bedroom.jpg';
+import babyroom from '../images/babyroom.jpg';
+import bathroom from '../images/bathroom.jpg';
 export const initialCards = [
     {
       title: 'Гостиная',
-      imageLink: './images/livingroom.jpg'
+      imageLink: livingroom
     },
     {
       title: 'Кухня',
-      imageLink: './images/kitchen.jpg'
+      imageLink: kitchen
     },
     {
       title: 'Балкон',
-      imageLink: './images/balcony.jpg'
+      imageLink: balcony
     },
     {
       title: 'Спальня',
-      imageLink: './images/bedroom.jpg'
+      imageLink: bedroom
     },
     {
       title: 'Детская',
-      imageLink: './images/babyroom.jpg'
+      imageLink: babyroom
     },
     {
       title: 'Ванна',
-      imageLink: './images/bathroom.jpg'
+      imageLink: bathroom
     }
   ];
 export const editButton = document.querySelector('.profile__edit-button')

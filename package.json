@@ -1,38 +1,31 @@
 {
-  "name": "mesto",
+  "name": "praktikum",
   "version": "1.0.0",
-  "description": "* Верстка страницы в соответсвии с макетом в Figma;\r * Реализация адаптивной верстки, включая десктопную и мобильную версию;\r * Использование Java Skript для реализации всплывающего окна формы редактирования профиля, добавления фотографий, открытия окна с увеличенной фотографией;\r * Загрузка карточек через JS, добавление и удаление карточек через JS;\r * Проставление лайка через JS;\r * Плавное появление всплывающих окон.\r * Валидация форм с помощью Java Script.\r * Использование ООП и модулей JS.",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "build": "rd /s /q dist && webpack",
     "dev": "webpack-dev-server --open --watch"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Geomap987/mesto.git"
-  },
-  "author": "Masha",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Geomap987/mesto/issues"
-  },
-  "homepage": "https://github.com/Geomap987/mesto#readme",
   "devDependencies": {
-    "@babel/core": "^7.11.1",
-    "@babel/preset-env": "^7.11.0",
-    "autoprefixer": "^9.8.6",
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "autoprefixer": "^9.8.0",
     "babel-loader": "^8.1.0",
-    "css-loader": "^4.2.1",
+    "css-loader": "^3.6.0",
     "cssnano": "^4.1.10",
     "file-loader": "^6.0.0",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.3.0",
+    "mini-css-extract-plugin": "^0.9.0",
     "postcss-loader": "^3.0.0",
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "mini-css-extract-plugin": "^0.9.0"
+    "corejs": "^1.0.0"
   }
 }
