@@ -9,11 +9,11 @@ export default class PopupWithImage extends Popup {
   }
 
   open() {
-    this._targetPopup.querySelector(".popup__bigphoto-image").src = this._image;
-    this._targetPopup.querySelector(".popup__bigphoto-image").alt = this._subtitle;
-    this._targetPopup.querySelector(
-      ".popup__bigphoto-subtitle"
-    ).textContent = this._subtitle;
+    const bigPhotoImage = this._targetPopup.querySelector(".popup__bigphoto-image");
+    const bigPhotoSubtitle = this._targetPopup.querySelector(".popup__bigphoto-subtitle");
+    bigPhotoImage.src = this._image;
+    bigPhotoImage.alt = this._subtitle;
+    bigPhotoSubtitle.textContent = this._subtitle;
     super.open();
   }
 }

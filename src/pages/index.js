@@ -20,23 +20,29 @@ import {
 } from "../utils/constants.js";
 
 // добавление 6 карточек на страницу
+
+function createNewCard(item) {
+  const card = new Card(item, cardTemplate, {
+    handleCardClick: (evt) => {
+      const targetImage = evt.target.src;
+      const targetSubtitle = evt.target.alt;
+      const targetPhotoPopup = new PopupWithImage(
+        ".popup-bigphotopopup",
+        targetImage,
+        targetSubtitle
+      );
+      targetPhotoPopup.open();
+      targetPhotoPopup.setEventListener();
+    },
+})
+  return card;
+}
+
 const cardList = new Section(
   {
     items: initialCards,
     renderer: (item) => {
-      const card = new Card(item, cardTemplate, {
-        handleCardClick: (evt) => {
-          const targetImage = evt.target.src;
-          const targetSubtitle = evt.target.alt;
-          const targetPhotoPopup = new PopupWithImage(
-            ".popup-bigphotopopup",
-            targetImage,
-            targetSubtitle
-          );
-          targetPhotoPopup.open();
-          targetPhotoPopup.setEventListener();
-        },
-      });
+      const card = createNewCard(item);
       const cardElement = card.generateCard();
       cardList.addItem(cardElement);
     },
@@ -59,23 +65,12 @@ profilePopup.setEventListener();
 const addPhotoPopup = new PopupWithForm({
   popupSelector: ".popup-addphoto",
   handleFormSubmit: (inputValues) => {
-    const card = new Card(inputValues, cardTemplate, {
-      handleCardClick: (evt) => {
-        const targetImage = evt.target.src;
-        const targetSubtitle = evt.target.alt;
-        const targetPhotoPopup = new PopupWithImage(
-          ".popup-bigphotopopup",
-          targetImage,
-          targetSubtitle
-        );
-        targetPhotoPopup.open();
-        targetPhotoPopup.setEventListener();
-      },
-    });
+    const card = createNewCard(inputValues);
     const cardElement = card.generateCard();
     cardList.addItem(cardElement);
   },
 });
+
 addPhotoPopup.setEventListener();
 
 //Информация о пользователе
