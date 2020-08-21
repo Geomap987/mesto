@@ -19,22 +19,20 @@ import {
   validationConfig,
 } from "../utils/constants.js";
 
+//попап с фотографией
+const photoPopup = new PopupWithImage(".popup-bigphotopopup");
+photoPopup.setEventListener();
+
 // добавление 6 карточек на страницу
 
 function createNewCard(item) {
   const card = new Card(item, cardTemplate, {
-    handleCardClick: (evt) => {
-      const targetImage = evt.target.src;
-      const targetSubtitle = evt.target.alt;
-      const targetPhotoPopup = new PopupWithImage(
-        ".popup-bigphotopopup",
-        targetImage,
-        targetSubtitle
-      );
-      targetPhotoPopup.open();
-      targetPhotoPopup.setEventListener();
+    handleCardClick: () => {
+      const image = item.imageLink;
+      const subtitle = item.title;
+      photoPopup.open(image, subtitle);
     },
-})
+  });
   return card;
 }
 
@@ -92,7 +90,7 @@ function editButtonHandler() {
   const userInfo = currentUser.getUserInfo();
   inputName.value = userInfo.name;
   inputJob.value = userInfo.job;
-  profilePopup.open();  
+  profilePopup.open();
 }
 editButton.addEventListener("click", editButtonHandler);
 
