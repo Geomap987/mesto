@@ -1,25 +1,34 @@
-# Проект 8: Место
+# Project 8: Mesto
 
+## Features
+- Page layout based on a Figma design
+- Responsive design for desktop and mobile screens
+- Profile edit popup
+- Add-photo popup
+- Enlarged image preview popup
+- Dynamic card rendering with JavaScript
+- Card addition and deletion
+- Like functionality
+- Smooth popup animations
+- Form validation
+- Object-oriented JavaScript with classes such as `Popup`, `Section`, and `UserInfo`
+- Bundling with Webpack
 
-### Основные задачи, реализованные в данном проекте
-* Верстка страницы в соответсвии с макетом в Figma;
-* Реализация адаптивной верстки, включая десктопную и мобильную версию;
-* Использование Java Skript для реализации всплывающего окна формы редактирования профиля, добавления фотографий, открытия окна с увеличенной фотографией;
-* Загрузка карточек через JS, добавление и удаление карточек через JS;
-* Проставление лайка через JS;
-* Плавное появление всплывающих окон.
-* Валидация форм с помощью Java Script.
-* Использование ООП, создание классов Popup, Section, UserInfo.
-* Использование WebPack.
+## Description
 
-**Описание**
+Mesto is a responsive front-end project developed from a Figma layout for 1280px and 320px screen sizes. The interface smoothly adapts to different screen widths.
 
-Данный проект разработан по макетам для разрешений: 1280 и 320 пикселей. Реализована плавная трансформация содержимого сайта при сжатии экрана. С помощью JS были сделаны окна, открывающееся при нажатии на кнопку редактирования и добавления фото. В форме редактирования профиля можно внести новые данные, которые автоматически отобразятся на странице. В форме добавления фото можно внести название и ссылку на фото и добавить новую карточку. При нажатии на карточку появляется окно с увеличенной фотографией. Через свойство visibility было реализовано плавное открытие попапов. С помощью JS реализована возможность добавлять и удалять карточки, ставить лайк. Была реализована валидация обеих форм с помощью Java Script.
-**Основные технологии**
+JavaScript is used to handle popup windows for editing the profile, adding new photos, and previewing images in an enlarged view. Users can update profile information, add new cards by entering a title and image link, delete cards, and like cards.
 
-* Для получения эффекта адаптивности были использованы медиазапросы, а также свойства flex-box и grid;
-* Галерея реализована с помощью Grid;
-* Для реализации окна Popup на JS было использовано добавление и удаление модификатора popup_opened при нажатии на кнопки редактирования и закрытия формы;
-* С помощью JS было задано поведение формы при действии submit, когда введенные значения автоматически отображаются в профиле, добавляются фотографии;
-* Начальные карточки добавляются из объекта при помощи метода prepend, пользовательские карточки добавляются методом push.
+The project also includes smooth popup transitions and validation for both forms.
 
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+- OOP
+- Flexbox
+- CSS Grid
+- Media queries
+- Webpack
